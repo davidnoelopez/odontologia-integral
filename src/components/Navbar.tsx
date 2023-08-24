@@ -6,7 +6,6 @@ import {
   CalendarDaysIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import { GrMailOption } from "react-icons/gr";
 
 const navigation = [
   { name: "Inicio", href: "#", current: true },
