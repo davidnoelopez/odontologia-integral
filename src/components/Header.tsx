@@ -5,8 +5,8 @@ import { MdSchedule, MdOutlinePhoneInTalk } from "react-icons/md";
 
 const Header = () => {
   return (
-    <div id="header" className="w-full justify-center px-6 py-4">
-      <div className="mx-auto my-4 hidden justify-center gap-8 md:flex">
+    <div id="header" className="w-full justify-center px-6 pb-6 pt-2">
+      <div className="mx-auto mb-4 hidden justify-center gap-8 md:flex">
         <div className="flex items-center">
           <FaMapMarkedAlt className="h-6 w-6 text-[#213361]" />
           <p className="ml-2 text-sm font-light text-gray-500">
