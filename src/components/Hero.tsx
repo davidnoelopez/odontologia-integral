@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div className="relative block w-full">
+    <section id="home" className="relative block w-full pt-24 md:pt-36">
       <div className="inset-0 -z-10 hidden sm:block">
         <Image
           className="w-full rounded-3xl"
@@ -23,7 +23,7 @@ const Hero = () => {
           quality={100}
         />
       </div>
-      <div className="absolute inset-0 grid h-auto w-full grid-cols-1 place-content-center bg-transparent sm:grid-cols-2">
+      <div className="absolute inset-0 grid h-auto w-full grid-cols-1 place-content-center bg-transparent pt-24 sm:grid-cols-2 md:pt-36">
         <div className="mx-6 flex flex-col items-center justify-center gap-4 sm:mx-0 sm:ml-8">
           <div className="flex max-w-sm flex-col gap-2 rounded-md p-2 backdrop-blur-sm">
             <h2 className="text-sm font-bold text-[#1370B5]">
@@ -47,7 +47,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
