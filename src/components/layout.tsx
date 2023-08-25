@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutProps) {
         <title>Odontologia Integral</title>
         <meta
           name="description"
-          content="Odontologia integral: consigue to mejor sonrisa."
+          content="Odontologia integral: consigue tu mejor sonrisa."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
