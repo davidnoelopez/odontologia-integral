@@ -22,7 +22,7 @@ const Header = () => {
         <div className="flex items-center">
           <MdSchedule className="h-6 w-6 text-[#213361]" />
           <p className="ml-2 text-sm font-light text-[#1370B5]">
-            Lun-Vie 9:00 - 19:00 | Sáb 10:00 - 16:00
+            Lun-Vie 10:00 - 19:00 | Sáb 10:00 - 14:00
           </p>
         </div>
         <div className="flex items-center">
