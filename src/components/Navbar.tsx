@@ -6,9 +6,11 @@ import {
   CalendarDaysIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import Link from "next/link";
+import { MdOutlinePhoneInTalk } from "react-icons/md";
 
 const navigation = [
-  { name: "Inicio", href: "#", current: true },
+  { name: "Inicio", href: "#home", current: true },
   { name: "Servicios", href: "#", current: false },
   { name: "Acerca De", href: "#", current: false },
   { name: "Contacto", href: "#", current: false },
@@ -16,10 +18,10 @@ const navigation = [
 
 const Navbar = () => {
   return (
-    <Disclosure as="nav" className="">
+    <Disclosure as="nav" className="px-6 pt-4 md:pt-0">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl rounded-full border border-gray-200 bg-gray-100 px-2 md:px-8">
+          <div className="mx-auto max-w-7xl rounded-full border border-gray-200 bg-gray-100 px-2 shadow-md md:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="relative inset-y-0 left-0 flex items-center pr-2 md:hidden">
                 {/* Mobile menu button*/}
@@ -61,14 +63,14 @@ const Navbar = () => {
               <div className="absolute inset-y-0 right-0 flex items-center gap-2 pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
                 <button
                   type="button"
-                  className="relative flex items-center gap-2 rounded-full bg-[#213361] px-2 py-2 text-sm text-white hover:bg-[#314e98] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 sm:px-4"
+                  className="relative flex items-center gap-2 rounded-full bg-[#213361] px-4 py-2 text-sm text-white hover:bg-[#314e98] focus:outline-none xs:px-4"
                 >
-                  <span className="hidden sm:block">Haz tu cita</span>
+                  <span className="block">Haz tu cita</span>
                   <CalendarDaysIcon className=" h-5 w-5" aria-hidden="true" />
                 </button>
                 <button
                   type="button"
-                  className="relative rounded-full bg-white p-1  text-[#213361] hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                  className="relative hidden rounded-full bg-white p-1 text-[#213361]  hover:bg-gray-300 focus:outline-none md:block"
                 >
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">Enviar correo</span>
