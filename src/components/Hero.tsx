@@ -13,12 +13,12 @@ const Hero = () => {
           quality={100}
         />
       </div>
-      <div className="inset-0 -z-10 block sm:hidden">
+      <div className="inset-0 -z-10 block h-[480px] overflow-hidden sm:hidden">
         <Image
           className="w-full rounded-3xl"
           src="/mobil-banner.png"
-          width={920}
-          height={484}
+          width={640}
+          height={1280}
           alt="Banner Odontologia Integral"
           quality={100}
         />
