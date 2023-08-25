@@ -36,11 +36,11 @@ const Hero = () => {
               Tenemos más de 35 años quitando excusas para sonreír, haciendo que
               cada momento se exprese sin malos entendidos
             </p>
-            <div className="flex w-full items-center justify-between space-x-6 text-sm font-semibold">
+            <div className="flex w-full items-center justify-between space-x-4 text-sm font-semibold lg:space-x-6">
               <button className="rounded-lg bg-[#1370B5] px-4 py-2 text-white shadow-lg hover:bg-[#2c5d82] sm:w-full">
                 Acerca de nosotros
               </button>
-              <button className="rounded-lg bg-white px-4 py-2 text-[#1370B5] shadow-lg hover:bg-slate-200 sm:w-full">
+              <button className="rounded-lg bg-white px-4 py-2 text-[#1370B5] shadow-lg hover:bg-slate-200 lg:w-full">
                 Tratamientos
               </button>
             </div>
