@@ -61,10 +61,9 @@ const Navbar = () => {
               <div className="absolute inset-y-0 right-0 flex items-center gap-2 pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
                 <button
                   type="button"
-                  className="relative flex items-center gap-2 rounded-full bg-[#213361] px-4 py-2 text-sm text-white hover:bg-[#314e98] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                  className="relative flex items-center gap-2 rounded-full bg-[#213361] px-2 py-2 text-sm text-white hover:bg-[#314e98] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 sm:px-4"
                 >
-                  <span className="absolute -inset-1.5" />
-                  <span>Haz tu cita</span>
+                  <span className="hidden sm:block">Haz tu cita</span>
                   <CalendarDaysIcon className=" h-5 w-5" aria-hidden="true" />
                 </button>
                 <button
@@ -79,7 +78,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="absolute w-40 max-w-sm rounded-lg bg-white/80 backdrop-blur-md md:hidden">
+          <Disclosure.Panel className="absolute z-50 w-40 max-w-sm rounded-lg bg-white/80 backdrop-blur-md md:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
                 <Disclosure.Button
