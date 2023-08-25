@@ -6,12 +6,10 @@ import {
   CalendarDaysIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import Link from "next/link";
-import { MdOutlinePhoneInTalk } from "react-icons/md";
 
 const navigation = [
   { name: "Inicio", href: "#home", current: true },
-  { name: "Servicios", href: "#", current: false },
+  { name: "Servicios", href: "#services", current: false },
   { name: "Acerca De", href: "#", current: false },
   { name: "Contacto", href: "#", current: false },
 ];
