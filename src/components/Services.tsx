@@ -72,10 +72,10 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="block w-full bg-[url('/mobile-banner-left.png')] bg-cover py-16 sm:bg-[url('/services-banner.png')]"
+      className="block w-full bg-[url('/mobile-banner-left.png')] bg-cover pt-20 sm:bg-[url('/services-banner.png')]"
     >
       <div className="inset-0 mt-10 grid h-auto w-full items-start justify-center bg-gradient-to-b from-white/80 to-white/50">
-        <div className="mx-6 flex flex-col items-center justify-center gap-4 sm:mx-0 sm:ml-8">
+        <div className="mx-6 flex flex-col items-center justify-center gap-4 sm:mx-0">
           <div className="flex max-w-lg flex-col gap-2 rounded-md p-2 text-center">
             <h2 className="text-sm font-bold text-gray-600">
               NUESTROS SERVICIOS
