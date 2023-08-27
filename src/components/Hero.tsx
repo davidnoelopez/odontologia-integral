@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="inset-0 -z-10 block h-[480px] overflow-hidden sm:hidden">
         <Image
           className="w-full rounded-3xl"
-          src="/mobil-banner.png"
+          src="/mobile-banner.png"
           width={640}
           height={1280}
           alt="Banner Odontologia Integral"

@@ -48,19 +48,19 @@ const services: Service[] = [
 
 const ServiceCard = ({ title, description, image }: Service) => {
   return (
-    <div className="flex max-w-xs flex-col items-center justify-center gap-2">
+    <div className="flex max-w-xs flex-col items-center justify-center gap-2 rounded-lg p-2 backdrop-blur-sm">
       <div className="flex flex-col items-center justify-center gap-2">
         <Image
-          className="rounded-full"
+          className="rounded-full shadow-md"
           src={image}
           width={100}
           height={100}
           alt={title}
           quality={100}
         />
-        <h3 className="text-2xl font-bold text-black">{title}</h3>
+        <h3 className="text-center text-2xl font-bold text-black">{title}</h3>
       </div>
-      <p className="text-center text-sm font-normal text-gray-600">
+      <p className="text-md text-center font-normal text-gray-600 sm:text-sm">
         {description}
       </p>
     </div>
@@ -71,19 +71,9 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="relative block w-full bg-gradient-to-b from-gray-300/80 to-white"
+      className="block w-full bg-[url('/mobile-banner-left.png')] bg-cover py-16 sm:bg-[url('/services-banner.png')]"
     >
-      <div className="inset-0">
-        <Image
-          className="w-full opacity-50 bg-blend-lighten"
-          src="/mobil-banner.png"
-          width={640}
-          height={1280}
-          alt="Banner Odontologia Integral"
-          quality={100}
-        />
-      </div>
-      <div className="absolute inset-0 mt-10 grid h-auto w-full items-start justify-center bg-transparent">
+      <div className="inset-0 mt-10 grid h-auto w-full items-start justify-center bg-gradient-to-b from-white/80 to-white/50">
         <div className="mx-6 flex flex-col items-center justify-center gap-4 sm:mx-0 sm:ml-8">
           <div className="flex max-w-lg flex-col gap-2 rounded-md p-2 text-center">
             <h2 className="text-sm font-bold text-gray-600">
