@@ -6,12 +6,13 @@ import {
   CalendarDaysIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import Link from "next/link";
 
 const navigation = [
   { name: "Inicio", href: "#home", current: true },
   { name: "Servicios", href: "#services", current: false },
   { name: "Acerca De", href: "#about", current: false },
-  { name: "Contacto", href: "#", current: false },
+  { name: "Contacto", href: "#contact", current: false },
 ];
 
 const Navbar = () => {
@@ -59,21 +60,23 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center gap-2 pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
-                <button
+                <Link
+                  href={"#contact"}
                   type="button"
                   className="relative flex items-center gap-2 rounded-full bg-[#213361] px-4 py-2 text-sm text-white hover:bg-[#314e98] focus:outline-none xs:px-4"
                 >
                   <span className="block">Haz tu cita</span>
                   <CalendarDaysIcon className=" h-5 w-5" aria-hidden="true" />
-                </button>
-                <button
+                </Link>
+                <Link
+                  href={`mailto:citas@odontologiaintegral.info`}
                   type="button"
                   className="relative hidden rounded-full bg-white p-1 text-[#213361]  hover:bg-gray-300 focus:outline-none md:block"
                 >
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">Enviar correo</span>
                   <EnvelopeIcon className="m-1 h-5 w-5" aria-hidden="true" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
