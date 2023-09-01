@@ -53,7 +53,11 @@ export const formSubmissionRouter = createTRPCRouter({
           from: "Nuevo Registro <no-reply@nogiistudio.com>",
           to: ["david@nogiistudio.com"],
           subject: "Nuevo registro",
-          text: `Nombre: ${input.name}\nCorreo: ${input.email}\nTeléfono: ${input.phone}\nTratamiento: ${input.treatment}\nFecha: ${input.date}\nHora: ${input.time}\nMensaje: ${input.message}`,
+          text: `Nombre: ${input.name}\nCorreo: ${input.email}\nTeléfono: ${
+            input.phone
+          }\nTratamiento: ${input.treatment}\nFecha: ${
+            input.date.toISOString().split("T")[0]
+          }\nHora: ${input.time}\nMensaje: ${input.message}`,
         });
       } catch (error) {
         console.log(error);
