@@ -4,8 +4,50 @@ import Link from "next/link";
 import React from "react";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { MdOutlinePhoneInTalk, MdSchedule } from "react-icons/md";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./Forms/Select";
 
 const Contact = () => {
+  const [formData, setFormData] = React.useState({
+    name: "",
+    email: "",
+    phone: "",
+    treatment: "",
+    date: new Date().toISOString().split("T")[0],
+    time: "",
+    message: "",
+  });
+
+  let timeSlotsWeekDays = [
+    "10:00",
+    "10:30",
+    "11:00",
+    "11:30",
+    "12:00",
+    "12:30",
+    "16:00",
+    "16:30",
+    "17:00",
+    "17:30",
+    "18:00",
+    "18:30",
+  ];
+  let timeSlotsSaturdays = [
+    "10:00",
+    "10:30",
+    "11:00",
+    "11:30",
+    "12:00",
+    "12:30",
+    "13:00",
+    "13:30",
+  ];
+
   return (
     <section id="contact" className="relative py-8">
       <div className="absolute top-0 -z-50 h-1/2 w-full bg-[#2A7EBC]" />
@@ -49,6 +91,8 @@ const Contact = () => {
             type="text"
             className="rounded-md bg-white p-2"
             placeholder="Nombre"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -60,6 +104,10 @@ const Contact = () => {
             type="email"
             className="rounded-md bg-white p-2"
             placeholder="Correo electrónico"
+            value={formData.email}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -71,18 +119,82 @@ const Contact = () => {
             type="tel"
             className="rounded-md bg-white p-2"
             placeholder="Teléfono"
+            value={formData.phone}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                phone: e.target.value.replace(/\D/, ""),
+              })
+            }
+            maxLength={13}
+            minLength={10}
           />
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="subject" className="sr-only">
-            Asunto
+            Tratamiento
           </label>
           <input
             id="subject"
             type="text"
             className="rounded-md bg-white p-2"
-            placeholder="Asunto"
+            placeholder="Tratamiento"
+            value={formData.treatment}
+            onChange={(e) =>
+              setFormData({ ...formData, treatment: e.target.value })
+            }
           />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="date" className="sr-only">
+            Fecha
+          </label>
+          <input
+            id="date"
+            type="date"
+            className="rounded-md bg-white p-2"
+            placeholder="Fecha"
+            value={formData.date}
+            onChange={(e) =>
+              setFormData({ ...formData, time: "", date: e.target.value })
+            }
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="time" className="sr-only">
+            Hora
+          </label>
+          <Select>
+            <SelectTrigger
+              className="w-full bg-white"
+              disabled={
+                !formData.date || new Date(formData.date).getDay() === 6
+              }
+            >
+              <SelectValue placeholder="Hora" />
+            </SelectTrigger>
+            <SelectContent className="bg-white">
+              {new Date(formData.date!).getDay() === 5
+                ? timeSlotsSaturdays.map((timeSlot) => (
+                    <SelectItem
+                      key={timeSlot}
+                      value={timeSlot}
+                      disabled={timeSlot === "10:00"}
+                    >
+                      {timeSlot}
+                    </SelectItem>
+                  ))
+                : timeSlotsWeekDays.map((timeSlot) => (
+                    <SelectItem
+                      key={timeSlot}
+                      value={timeSlot}
+                      disabled={timeSlot === "10:00"}
+                    >
+                      {timeSlot}
+                    </SelectItem>
+                  ))}
+            </SelectContent>
+          </Select>
         </div>
         <div className="flex flex-col gap-2 md:col-span-2">
           <label htmlFor="message" className="sr-only">
@@ -93,6 +205,10 @@ const Contact = () => {
             className="resize-none rounded-md bg-white p-2"
             placeholder="Mensaje"
             rows={5}
+            value={formData.message}
+            onChange={(e) =>
+              setFormData({ ...formData, message: e.target.value })
+            }
           />
         </div>
         <div className="flex flex-col gap-2 md:col-span-2">
