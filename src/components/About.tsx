@@ -21,7 +21,7 @@ const About = () => {
               <MdOutlineHealthAndSafety className="h-10 w-10 text-[#1370B5]" />
             </div>
           </div>
-          <div className="mt-4 flex flex-col-reverse justify-center gap-6 px-4 sm:grid sm:grid-cols-2 md:px-12">
+          <div className="flex flex-col-reverse justify-center gap-6 px-4 sm:grid sm:grid-cols-2 md:px-12">
             <div className="flex flex-col items-center justify-center gap-2">
               <Image
                 className="max-h-96 w-auto"
@@ -32,7 +32,7 @@ const About = () => {
                 quality={100}
               />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col justify-center gap-2">
               <h2 className="text-center text-2xl font-bold text-black">
                 Dr. David E. López
               </h2>
