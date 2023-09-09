@@ -34,8 +34,8 @@ function TextArea(props: TextAreaFields) {
         className="focus:border-primary-500 focus:ring-primary-500 dark:focus:border-primary-500 dark:focus:ring-primary-500 block w-full resize-none rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-300 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500"
         onChange={(e) => props.onChange?.(e.target.value)}
         required={props.isRequired}
-        aria-valuemax={props.maxLength}
-        aria-valuemin={props.minLength}
+        maxLength={props.maxLength}
+        minLength={props.minLength}
       />
       {props.description && (
         <div {...descriptionProps} style={{ fontSize: 12 }}>
