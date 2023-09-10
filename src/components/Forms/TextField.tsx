@@ -9,18 +9,15 @@ function TextField(props: AriaTextFieldProps) {
     useTextField(props, ref);
 
   return (
-    <div>
-      <label
-        {...labelProps}
-        className="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300"
-      >
+    <div className="relative flex flex-col gap-2">
+      <label {...labelProps} className="sr-only" htmlFor={inputProps.id}>
         {label}
         {props.isRequired && <span className="text-rose-400">*</span>}
       </label>
       <input
         {...inputProps}
         ref={ref}
-        className="focus:border-primary-500 focus:ring-primary-500 dark:shadow-sm-light dark:focus:border-primary-500 dark:focus:ring-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-300 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500"
+        className="z-10 rounded-md bg-white p-2 focus:outline-none focus:ring-2 focus:ring-sky-600"
         onChange={(e) => props.onChange?.(e.target.value)}
         required={props.isRequired}
         maxLength={props.maxLength}
@@ -32,12 +29,15 @@ function TextField(props: AriaTextFieldProps) {
         </div>
       )}
       {props.errorMessage && props.validationState === "invalid" && (
-        <div
-          {...errorMessageProps}
-          className="absolute ml-2 mt-1 text-sm text-rose-400"
-        >
-          {props.errorMessage}
-        </div>
+        <>
+          <div
+            {...errorMessageProps}
+            className="absolute -bottom-1.5 ml-2 mt-1 rounded-b-md bg-rose-200 px-2 text-xs text-rose-700"
+          >
+            {props.errorMessage}
+          </div>
+          <div className="mb-0.5" />
+        </>
       )}
     </div>
   );
