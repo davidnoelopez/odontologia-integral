@@ -10,11 +10,14 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Head>
-        <title>Odontologia Integral</title>
+        <title>
+          Odontología Integral: Servicios Dentales Para Tu Sonrisa Perfecta
+        </title>
         <meta
           name="description"
           content="Odontologia integral: consigue tu mejor sonrisa."
         />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
