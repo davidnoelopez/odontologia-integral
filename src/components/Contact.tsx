@@ -20,18 +20,30 @@ import { Button } from "./ui/Button";
 import { CalendarIcon } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/Popover";
 import TextArea from "./Forms/TextArea";
+import { api } from "~/utils/api";
+import { useRouter } from "next/router";
 
 const Contact = () => {
-  const [formData, setFormData] = React.useState<
-    Partial<{
-      name: string;
-      email: string;
-      phone: string;
-      date: Date | undefined;
-      time: string;
-      message: string;
-    }>
-  >({
+  const router = useRouter();
+
+  const { mutate: createSubmission, isLoading } =
+    api.formSubmission.create.useMutation({
+      onSuccess: (data) => {
+        void router.push("/formConfirmation?i=" + data.id);
+      },
+      onError: (error) => {
+        console.log(error);
+      },
+    });
+
+  const [formData, setFormData] = React.useState<{
+    name: string;
+    email: string;
+    phone: string;
+    date: Date | undefined;
+    time: string;
+    message: string;
+  }>({
     name: "",
     email: "",
     phone: "",
@@ -111,15 +123,7 @@ const Contact = () => {
       !errors.time &&
       !errors.message
     ) {
-      const data = {
-        name,
-        email,
-        phone,
-        date,
-        time,
-        message,
-      };
-      console.log(data);
+      createSubmission(formData);
     }
   };
 
@@ -372,6 +376,7 @@ const Contact = () => {
           <button
             type="submit"
             className="max-w-fit rounded-md bg-[#213361] p-2 px-14 text-white"
+            disabled={isLoading}
           >
             Enviar
           </button>

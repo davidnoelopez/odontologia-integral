@@ -25,8 +25,7 @@ export const formSubmissionRouter = createTRPCRouter({
           })
           .email(),
         phone: z.string().max(15).optional(),
-        treatment: z.string().max(50).optional(),
-        date: z.date(),
+        date: z.date().optional(),
         time: z.string().max(5),
         message: z.string().min(1).max(500),
       })
@@ -38,7 +37,6 @@ export const formSubmissionRouter = createTRPCRouter({
             name: input.name,
             email: input.email,
             phone: input.phone,
-            treatment: input.treatment,
             date: input.date,
             time: input.time,
             message: input.message,
@@ -55,9 +53,9 @@ export const formSubmissionRouter = createTRPCRouter({
           subject: "Nuevo registro",
           text: `Nombre: ${input.name}\nCorreo: ${input.email}\nTeléfono: ${
             input.phone
-          }\nTratamiento: ${input.treatment}\nFecha: ${
-            input.date.toISOString().split("T")[0]
-          }\nHora: ${input.time}\nMensaje: ${input.message}`,
+          }\nFecha: ${input.date?.toISOString().split("T")[0]}\nHora: ${
+            input.time
+          }\nMensaje: ${input.message}`,
         });
       } catch (error) {
         console.log(error);
