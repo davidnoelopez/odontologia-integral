@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 import Header from "../components/Header";
 
@@ -17,7 +18,10 @@ export default function Layout({ children }: LayoutProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="bg-transparent">{children}</main>
+      <main className="bg-transparent">
+        {children}
+        <Analytics />
+      </main>
     </>
   );
 }
