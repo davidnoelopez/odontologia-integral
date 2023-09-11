@@ -14,6 +14,20 @@ export default function Document() {
           })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}');
           `}
         </Script>
+        <Script
+          id="gtm-2"
+          strategy="beforeInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GTM_ANALYTICS}`}
+        ></Script>
+        <Script id="gtm-2" strategy="beforeInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', '${process.env.NEXT_PUBLIC_GTM_ANALYTICS}');
+          `}
+        </Script>
       </Head>
       <body>
         {/* Google Tag Manager */}
