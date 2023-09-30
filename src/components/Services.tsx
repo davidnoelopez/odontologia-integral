@@ -101,7 +101,7 @@ const Services = () => {
         <div className="mt-8 flex w-full items-center justify-center">
           <Link
             className="w-auto rounded-lg bg-[#213361] px-4 py-2 text-white shadow-lg hover:bg-[#314e98]"
-            href={"/cita"}
+            href={"#contact"}
           >
             Reserva tu espacio
           </Link>

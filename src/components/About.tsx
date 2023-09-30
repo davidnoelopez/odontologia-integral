@@ -32,7 +32,7 @@ const About = () => {
                 quality={100}
               />
             </div>
-            <div className="flex flex-col justify-center gap-2">
+            <div className="flex max-w-sm flex-col justify-center gap-2">
               <h2 className="text-center text-2xl font-bold text-black">
                 Dr. David E. López
               </h2>
@@ -57,7 +57,7 @@ const About = () => {
           <p className="text-md flex gap-1 text-justify font-light text-gray-500 sm:text-sm">
             <span>No dudes en contactarnos para ayuda oportuna.</span>
             <Link
-              href="/contacto"
+              href="#contact"
               className="text-[#1370B5] hover:text-[#314e98]"
             >
               Consulta aquí

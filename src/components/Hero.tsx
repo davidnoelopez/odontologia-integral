@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -37,12 +38,18 @@ const Hero = () => {
               cada momento se exprese sin malos entendidos
             </p>
             <div className="flex w-full items-center justify-between space-x-4 text-sm font-semibold lg:space-x-6">
-              <button className="rounded-lg bg-[#1370B5] px-4 py-2 text-white shadow-lg hover:bg-[#2c5d82] sm:w-full">
+              <Link
+                href="#about"
+                className="rounded-lg bg-[#1370B5] px-4 py-2 text-center text-white shadow-lg hover:bg-[#2c5d82] sm:w-full"
+              >
                 Acerca de nosotros
-              </button>
-              <button className="rounded-lg bg-white px-4 py-2 text-[#1370B5] shadow-lg hover:bg-slate-200 lg:w-full">
+              </Link>
+              <Link
+                href="#services"
+                className="rounded-lg bg-white px-4 py-2 text-center text-[#1370B5] shadow-lg hover:bg-slate-200 lg:w-full"
+              >
                 Tratamientos
-              </button>
+              </Link>
             </div>
           </div>
         </div>
